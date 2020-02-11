@@ -1,16 +1,16 @@
-from decimal import Decimal
+import numpy as np
 
-val = input().split(' ')
-n = int(val[0])
-k = int(val[1])
+n,k = map(int,input().split())
 
-p_list = [ int(p) for p in input().split(' ')]
 
-e_max = 0
 
-for i in range(n - k + 1):
-    temp = sum(p_list[i:k+i])
-    if e_max < temp:
-        e_max = temp
+p_list = np.fromstring(input(),int,sep=' ')
 
-print(Decimal(e_max + k)/Decimal(2))
+cumulative_sum = np.zeros(n+1)
+cumulative_sum[1:] = p_list.cumsum()
+
+length_k_sum_list = cumulative_sum[k:] - cumulative_sum[0:-k]
+
+e_max = length_k_sum_list.max()
+
+print((e_max + k) / 2 )
