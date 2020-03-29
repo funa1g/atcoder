@@ -1,17 +1,12 @@
-import sys
+n = int(input())
 
-def is_even(num):
-    return num % 2 == 0
+result = 0
+if n % 2 != 1:
+    fexp = 0
+    for i in range(1, n):
+        fexp = 5 ** i * 2
+        if fexp > n:
+            break
+        result += n // fexp
 
-val = input()
-if int(val) % 2 == 1:
-    print(0)
-else:
-    counter = 0
-    digits = len(val)
-    for i, num in enumerate(val[::-1]):
-        if i+1 != digits:
-            counter += i * 9
-        else:
-            counter += i * int(num)
-    print(counter)
+print(result)

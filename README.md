@@ -5,7 +5,7 @@ For AtCoder contests
 
 exam | result
 ---- | -----
-abc_148 | A,B,C
+abc_148 | A,B,D
 abc_153 | A,B,C,D
 abc_154 | A,B,C
 abc_160 | A,B,C
